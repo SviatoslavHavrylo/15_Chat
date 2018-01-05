@@ -25,7 +25,7 @@ public class ChatClient {
     }
 
     private String getName() {
-        System.out.println("Введите свой ник:");
+        System.out.println("Enter your nickname:");
         username = scan.nextLine();
         System.out.println("Welcome, " + username + ".");
         return username;
@@ -49,7 +49,7 @@ public class ChatClient {
                 if (line.startsWith("SUBMITNAME")) {
                     out.println(getName());
                 } else if (line.startsWith("NAMEACCEPTED")) {
-                    System.out.println("Ваш ник принят");
+                    System.out.println("Nickname accepted");
                     break;
                 }
             }
@@ -67,7 +67,7 @@ public class ChatClient {
                 in.close();
                 out.close();
             } catch (Exception e) {
-                System.err.println("Потоки не были закрыты!");
+                System.err.println("Thread is not closed!");
             }
 
         } catch (Exception e) {
@@ -77,7 +77,7 @@ public class ChatClient {
                 in.close();
                 out.close();
             } catch (Exception e) {
-                System.err.println("Потоки не были закрыты!");
+                System.err.println("Thread is not closed!");
             }
         }
     }
@@ -104,7 +104,7 @@ public class ChatClient {
                     }
                 }
             } catch (IOException e) {
-                System.err.println("Ошибка при получении сообщения.");
+                System.err.println("Error in getting message.");
                 e.printStackTrace();
             }
         }
